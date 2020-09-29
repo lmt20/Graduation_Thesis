@@ -64,9 +64,9 @@ def graph_insight_train(data):
     # plt.ylabel('number of transactions');
 
     #3. graph of total transactions per item_id
-    plt.hist(df_num['item_id'],bins=100, alpha=0.5, histtype='stepfilled', color='blue', edgecolor='none')
-    plt.xlabel('item_id');
-    plt.ylabel('number of transactions');
+    # plt.hist(df_num['item_id'],bins=100, alpha=0.5, histtype='stepfilled', color='blue', edgecolor='none')
+    # plt.xlabel('item_id');
+    # plt.ylabel('number of transactions');
 
     #4.1. remove outliner and draw a graph of total transactions per price
     # print(df_num.shape)
@@ -75,6 +75,8 @@ def graph_insight_train(data):
     # plt.hist(df_num['item_price'],bins= 100, alpha=0.5, histtype='stepfilled', color='blue', edgecolor='none')
     # plt.xlabel('item_price');
     # plt.ylabel('number of transactions');
+    plt.figure(figsize=(10, 5))
+    sns.distplot(np.log(train['item_price']), color="red");
 
 
     plt.show()
